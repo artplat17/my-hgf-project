@@ -1,0 +1,36 @@
+services:
+    apwa.pmwelcome.admin.controller:
+        class: apwa\pmwelcome\controller\admin_controller
+        arguments:
+            - '@config'
+            - '@config_text'
+            - '@dbal.conn'
+            - '@controller.helper'
+            - '@language'
+            - '@log'
+            - '@request'
+            - '@template'
+            - '@user'
+            - '@apwa.pmwelcome.core'
+            - '%core.root_path%'
+            - '%core.php_ext%'
+    apwa.pmwelcome.listener:
+        class: apwa\pmwelcome\event\listener
+        arguments:
+            - '@config'
+            - '@config_text'
+            - '@dbal.conn'
+            - '@user'
+            - '%core.root_path%'
+            - '%core.php_ext%'
+        tags:
+            - { name: event.listener }
+
+    apwa.pmwelcome.core:
+        class: apwa\pmwelcome\core\pmwelcome
+        arguments:
+            - '@dbal.conn'
+            - '@language'
+            - '@request'
+            - '%core.root_path%'
+            - '%core.php_ext%'

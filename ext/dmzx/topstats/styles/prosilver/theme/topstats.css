@@ -1,0 +1,255 @@
+#vertical-ticker {
+   position:relative;   
+   height: 123px;
+   overflow: hidden;
+}
+
+#vertical-ticker li {
+   display: block;
+}
+
+#news {
+   height: 41px;
+   overflow: hidden;
+}
+
+dl.starimg {
+   background-image: url("./images/announce.png");
+   background-repeat: no-repeat;
+}
+
+.block-left {
+    box-sizing: border-box;
+    width: 100%;
+	padding-right: 3px;
+	vertical-align: top;
+}
+
+.block-right {
+    box-sizing: border-box;
+    width: 100%;
+	padding-left: 3px;
+	vertical-align: top;
+}
+
+.block-left-off {
+    box-sizing: border-box;
+    width: 100%;
+	vertical-align: top;
+}
+
+.block-right-off {
+    box-sizing: border-box;
+    width: 100%;
+	vertical-align: top;
+}
+
+.container {
+	width: 100%;
+	columns: 2;
+	display: flex;
+}
+
+.tsticker {
+   position: relative;
+   float: right;
+   padding-right: 40px;
+   margin-top: -21px;
+   height:17px;
+}
+
+a.stats_topic_title {
+   font-size: 1.1em;
+   padding-left: 6px;
+   font-weight: bold;
+}
+
+span.stats_name {
+   float: left;
+   padding-left: 6px;
+   font-size: 1.1em;
+   font-weight: bold;   
+}
+
+span.stats_author {
+   padding-left: 6px;
+}
+
+span.stats_info {
+   float: right;
+   font-size: 1.1em;   
+   position: absolute; 
+   left: 74.25%;
+   top: 18px;
+}
+
+@media (min-width: 766.5px) and (max-width: 991.5px) {
+    
+    span.stats_info_posts, span.stats_info_topics {
+        left: 72%
+    }
+}
+
+@media (min-width: 991.5px) {
+    
+    span.stats_info_posts, span.stats_info_topics {
+        left: 70%
+    }
+}
+
+span.stats_info_posts {
+    float: right;
+    font-size: 1.1em;
+    position: absolute;
+    width: 80px;
+    text-align: center;
+    top: 18px;
+}
+
+span.stats_info_topics {
+    float: right;
+    font-size: 1.1em;
+    position: absolute;
+    top: 18px;
+    width: 80px;
+    text-align: center;
+}
+
+span.stats_infos {
+   font-size: 1.1em;   
+   position: absolute; 
+   left: 77%;
+}
+
+span.stats_infos-off_head {
+    font-size: 1.1em;
+    position: absolute;
+    left: 74%;
+    width: 70px;
+    text-align: center;
+}
+
+span.stats_infos-off_foot {
+   font-size: 1.1em;   
+   position: absolute; 
+   left: 74.25%;
+   width: 70px;
+   text-align: center;
+}
+
+span.stats_post_infos_mau {
+    font-size: 1.1em;
+    position: absolute;
+    left: 73%;
+    width: 75px;
+    text-align: center;
+    top: 0px;
+}
+
+span.stats_post_infos_maf {
+    font-size: 1.1em;
+    position: absolute;
+    left: 73%;
+    width: 75px;
+    text-align: center;
+    top: 0px;
+}
+
+span.stats_date {
+   font-size: 1.1em;   
+   position: absolute; 
+   left: 70%;
+}
+
+span.stats_date-off {
+   font-size: 1.1em;   
+   position: absolute; 
+   left: 72%;
+}
+
+@media only screen and (max-width: 700px), only screen and (max-device-width: 700px) {
+   span.stats_name {
+      width: 100%;
+      text-align: center;
+   }
+   
+   span.stats_info {
+      display: none;
+   }
+   
+   span.stats_date {
+      display: none;
+   }
+   
+	dt.stats_title {
+	   text-align: center;
+	}
+
+   #vertical-ticker{
+	   height: 123px !important;
+	}
+	
+	.forabg {
+		border-radius: 7px !important;
+		margin-left: 0 !important;
+		margin-right: 0 !important;
+	}
+}
+
+@media only screen and (max-width: 550px), only screen and (max-device-width: 550px) {
+   span.stats_name {
+      width: 100%;
+      text-align: center;
+   }
+   
+   span.stats_info {
+      display: none;
+   }
+   
+   span.stats_date {
+      display: none;
+   }   
+   
+	dt.stats_title {
+	   text-align: center;
+	}  
+	
+   #vertical-ticker{
+	   height: 123px !important;
+	}
+	
+	.forabg {
+		border-radius: 7px !important;
+		margin-left: 0 !important;
+		margin-right: 0 !important;
+	}
+}
+
+@media only screen and (max-width: 400px), only screen and (max-device-width: 400px) {
+   span.stats_name {
+      width: 100%;
+      text-align: center;
+   }
+   
+   span.stats_info {
+      display: none;
+   }
+   
+   span.stats_date {
+      display: none;
+   }
+   
+	dt.stats_title {
+	   text-align: center;
+	}  
+	   
+   #vertical-ticker{
+	   height: 140px !important;
+	}
+	
+	.forabg {
+		border-radius: 7px !important;
+		margin-left: 0 !important;
+		margin-right: 0 !important;
+	}
+}

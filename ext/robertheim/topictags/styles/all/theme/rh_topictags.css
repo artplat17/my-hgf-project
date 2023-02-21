@@ -1,0 +1,144 @@
+/*
+ *	.rh_tag is used in viewforum etc to show that an item is tagged with this tag.
+ *	For the tag cloud rh_topictags_smallest etc. are used to define the size of the tags.
+ */
+ 
+.rh_topictags_tagcloud {
+    width: 100%;
+    text-align: left;
+    margin: 0px auto;
+}
+
+.rh_topictags_tagcloud ul
+{
+	margin:		0;
+	padding:	0;
+}
+
+.rh_topictags_tagcloud li, .rh_tag, tags-input .tags .tag-item {
+    list-style-type: none;
+    display: inline-block;
+    text-align: center;
+    border-radius: 25px;
+    border-width: 2px;
+    border-style: double;
+    font-weight: 450;
+    border-color: #5fc2e3;
+}
+
+.rh_tag a
+{
+    color: #f8467e;
+}
+
+.rh_tag a:active    {
+    text-decoration: none;
+}
+
+.rh_topictags_tagcloud li
+{
+	margin-top: 5px !important;
+	font-weight:		bold;
+	display: inline-block!important;
+}
+
+.rh_topictags_tagcloud a {
+    color: #e41c5a;
+}
+
+.rh_tag,
+tags-input .tags .tag-item
+{
+	padding:		2px 7px 3px;
+	margin:			3px 2px 2px 2px;
+}
+
+.rh_topictags_count
+{
+	color:		#555;
+	font-size:	x-small;
+}
+
+.rh_topictags_tagcloud li:hover, .rh_tag:hover, tags-input .tags .tag-item:hover {
+    background: #f8467eb5;
+    cursor: pointer;
+}
+
+.rh_topictags_tagcloud li:active, .rh_tag:active, tags-input .tags .tag-item:active {
+    background: #78deff80;
+}
+
+.rh_tag a:hover {
+    text-decoration: none;
+}
+
+.rh_topictags_tagcloud li:hover .rh_topictags_count,
+.rh_topictags_tagcloud li:hover a,
+.rh_tag:hover a,
+tags-input .tags .tag-item:hover,
+tags-input .tags .tag-item:hover a
+{
+	color:				#cadceb;
+}
+
+/* ----------- tag sizes for tag-cloud ----------- */
+
+.rh_topictags_smallest
+{
+	font-size:	x-small;
+}
+ 
+.rh_topictags_small
+{
+	font-size:	small;
+}
+ 
+.rh_topictags_medium
+{
+	font-size:	medium;
+}
+ 
+.rh_topictags_large
+{
+	font-size:	large;
+}
+ 
+.rh_topictags_largest
+{
+	font-size:	14px;
+}
+/* --------- END tag sizes for tag-cloud --------- */
+
+/* Smartphones (portrait and landscape) ----------- */
+@media only screen 
+and (min-width : 320px) 
+and (max-width : 480px)
+{
+/* Styles */
+	.rh_topictags_tagcloud li
+	{
+		display:	block;
+	}
+}
+
+@media (max-width:494.5px) {
+    
+    .rh_topictags_largest {
+	    font-size:	12px;
+    }
+    
+    .rh_topictags_tagcloud li {
+        padding: 4px 12px;
+    }
+}
+
+@media (min-width:494.5px) {
+    
+    .rh_topictags_largest {
+	    font-size:	14px;
+    }
+    
+    .rh_topictags_tagcloud li {
+        padding: 5px 15px;
+    }
+}

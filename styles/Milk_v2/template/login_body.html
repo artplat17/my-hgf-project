@@ -1,0 +1,76 @@
+<!-- INCLUDE overall_header_simplified.html -->
+
+<div class="login_container<!-- IF S_ADMIN_AUTH --> login_container_admin_auth<!-- ENDIF -->">
+    <div class="login_container_left">
+        <div class="login_container_left_section_content fancy_panel animated fadeIn">
+        	<div class="login_container_padding login_form">
+                <form action="{S_LOGIN_ACTION}" method="post" id="login" data-focus="<!-- IF S_ADMIN_AUTH -->{PASSWORD_CREDENTIAL}<!-- ELSE -->{USERNAME_CREDENTIAL}<!-- ENDIF -->">
+                    <div class="login-logo" style="text-align: center;"><img src="https://hornygirls.fun/ext/planetstyles/flightdeck/store/150c.png" width="69" height="69" alt=""></div>
+                    <!-- IF LOGIN_EXPLAIN --><h2 class="login-title" style="text-align: center;">{LOGIN_EXPLAIN}</h2><!-- ELSE --><h2 class="login-title" style="text-align: center; -webkit-text-stroke: 0.2px #e41c5a; font-weight: 500;">{L_LLOGIN}</h2><!-- ENDIF -->
+                
+                    <fieldset <!-- IF not S_CONFIRM_CODE -->class="fields1"<!-- ELSE -->class="fields2"<!-- ENDIF -->>
+                        <!-- IF LOGIN_ERROR --><div class="error">{LOGIN_ERROR}</div><!-- ENDIF -->
+                        <div>
+                            <input type="text" tabindex="1" name="{USERNAME_CREDENTIAL}" id="{USERNAME_CREDENTIAL}" size="25" value="{USERNAME}" placeholder="{L_USERNAME}" class="inputbox" />
+                        </div>
+                        <div>
+                            <input type="password" tabindex="2" id="{PASSWORD_CREDENTIAL}" name="{PASSWORD_CREDENTIAL}" size="25" value placeholder="{L_PASSWORD}" class="inputbox" autocomplete="off" />
+                        </div>
+                        <!-- IF U_SEND_PASSWORD -->
+                	        <div class="login_form_forgot_link login">
+        						<a href="{U_SEND_PASSWORD}">{L_FORGOT_PASS}</a>
+                            </div>
+                        <!-- ENDIF -->
+                        <!-- IF S_DISPLAY_FULL_LOGIN and (U_SEND_PASSWORD or U_RESEND_ACTIVATION) -->
+                            <div hidden>                    
+                                <!-- IF S_AUTOLOGIN_ENABLED --><label for="autologin"><input type="checkbox" name="autologin" id="autologin" tabindex="4" checked /> {L_LOG_ME_IN}</label><!-- ENDIF -->                            
+                            </div>
+                        <!-- ENDIF -->
+                        <!-- IF CAPTCHA_TEMPLATE and S_CONFIRM_CODE -->
+                            <div>
+                                <!-- DEFINE $CAPTCHA_TAB_INDEX = 3 -->
+                                <!-- INCLUDE {CAPTCHA_TEMPLATE} -->
+                            </div>
+                        <!-- ENDIF -->
+                
+                        {S_LOGIN_REDIRECT}
+						{S_FORM_TOKEN_LOGIN}
+                        {S_HIDDEN_FIELDS}
+                        <input type="submit" name="login" tabindex="6" value="{L_LOGIN}" class="button2 specialbutton" />
+                    </fieldset>            
+                </form>
+                <!-- IF not S_ADMIN_AUTH and PROVIDER_TEMPLATE_FILE -->
+                    <!-- INCLUDE {PROVIDER_TEMPLATE_FILE} -->
+                <!-- ENDIF -->
+				<!-- IF U_RESEND_ACTIVATION -->
+                	<div class="login_form_forgot_link">
+                    	<a href="{U_RESEND_ACTIVATION}">{L_RESEND_ACTIVATION}</a>
+                    </div>
+                <!-- ENDIF -->  
+                <div class="login_form_forgot_link">
+                    <i class="fa fa-chevron-left" aria-hidden="true"></i> <a href="{U_INDEX}">{L_BACK_TO_PREV}</a>
+                </div>                              
+            </div>
+        </div>
+    </div>
+    
+	<!-- IF not S_ADMIN_AUTH and S_REGISTER_ENABLED -->
+    <div class="login_container_right">
+        <div class="login_container_right_section_content fancy_panel animated fadeIn"> 
+			<div class="login_container_padding"> 
+                <h3>{L_REGISTER}</h3>
+                <p class="login_container_info">{L_LOGIN_INFO}</p>
+                <p><strong><a href="{U_TERMS_USE}">{L_TERMS_USE}</a> | <a href="{U_PRIVACY}">{L_PRIVACY}</a></strong></p>
+                <p><a href="{U_REGISTER}" class="button2 specialbutton">{L_REGISTER}</a></p>
+            </div> 
+        </div>
+    </div> 
+	<!-- ENDIF -->             
+
+</div><!-- /.login_container -->
+
+<script type="text/javascript">
+
+</script>
+
+<!-- INCLUDE overall_footer_simplified.html -->

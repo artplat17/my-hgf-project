@@ -1,0 +1,17 @@
+<div id='list_thanks{{ postrow.POST_ID }}'>
+{% if postrow.THANKS and postrow.THANKS_POSTLIST_VIEW and not postrow.S_POST_ANONYMOUS and not S_IS_BOT %}
+    <div class="notice hotlist">
+			{% if postrow.S_MOD_THANKS %}
+			<ul class="post-buttons" style="float: right;position: static;margin-top: 3px;">
+				<li>
+					<a id='clear_list_thanks{{ postrow.POST_ID }}' href="{{ postrow.U_CLEAR_LIST_THANKS_POST }}" title="{{ lang('CLEAR_LIST_THANKS') }}"  class="button button-icon-only" style="float:left">
+						<i class="icon fa-times fa-fw" aria-hidden="true"></i><span class="sr-only">{{ lang('CLEAR_LIST_THANKS') }}</span>
+					</a>
+				</li>
+			</ul>
+			{% endif %}
+			{{ postrow.THANK_TEXT }}{{ postrow.POST_AUTHOR_FULL }}{{ postrow.THANK_TEXT_2 }}<br>
+			{{ postrow.THANKS }}
+	</div>
+{% endif %}
+</div>

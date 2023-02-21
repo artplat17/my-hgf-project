@@ -1,0 +1,8 @@
+services:
+    david63.removeagreement.listener:
+        class: david63\removeagreement\event\listener
+        tags:
+            - { name: event.listener }
+
+    _defaults:
+        public: true

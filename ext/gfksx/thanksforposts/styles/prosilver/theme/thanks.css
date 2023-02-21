@@ -1,0 +1,141 @@
+/* proSilver Content Styles for MOD Thanks
+---------------------------------------- */
+div#list_thanks6 .notice {
+    padding-top: 0.35em;
+}
+
+li.hotpoints {
+    margin-right: 13px;
+    margin-top: 5px;
+}
+
+@media only screen and (min-width:990.5px) and (max-width:1002.5px) {
+
+    li.hotpoints {
+        margin-right: 3px;
+    }
+}
+
+@media (max-width:766.5px) {
+    li.hotpoints {
+            margin-right: 8px;
+            margin-top: 5px;
+    }
+}
+
+@media (min-width:700.5px) {
+    .notice dl {
+        margin-left: 0px;
+        margin-top: 3px;
+    }
+}
+
+.notice dd {
+    margin-top: 5px;
+}
+
+.hothot .notice {
+    margin-top: 15px;
+    border-top: 1px solid transparent;
+    border-color: rgba(255,255,255,0.04);
+}
+
+@media (min-width:766.5px) {
+
+    .notice dl {
+        display: block;
+    }
+}
+
+@media (max-width:766.5px) {
+
+.notice dl {
+    display: block;
+    }
+}
+
+li.hotpoints {
+    clear: both;
+    text-align: right;
+    color: #e41c5a;
+}
+
+dl.thanks {
+	min-height: 35px;
+	background-position: 10px 50%;		/* Position of folder icon */
+	background-repeat: no-repeat;
+}
+
+dl.thanks dt {
+	padding-left: 45px;					/* Space for folder icon */
+	background-repeat: no-repeat;
+	background-position: 5px 95%;		/* Position of topic icon */
+	width: 45%;
+}
+
+dd.lastpostthanks {
+	width: auto;
+	font-size: 1.1em;
+}
+dd.lastpostthanks span {
+	display: block;
+	padding-left: 5px;
+}
+/* List in forum description */
+dl.thanks dt ol,
+dl.thanks dt ul {
+	list-style-position: inside;
+	margin-left: 1em;
+}
+
+dl.thanks dt li {
+	display: list-item;
+	list-style-type: inherit;
+}
+li.header dl.thanks {
+	min-height: 0;
+}
+
+li.header dl.thanks dt {
+	/* Tweak for headers alignment when folder icon used */
+	padding-left: 0;
+	padding-right: 50px;
+}
+
+/* Forum list column styles */
+dl.thanks {
+	min-height: 35px;
+	background-position: 10px 50%;		/* Position of folder icon */
+	background-repeat: no-repeat;
+}
+
+dl.thanks dt {
+	padding-left: 45px;					/* Space for folder icon */
+	background-repeat: no-repeat;
+	background-position: 5px 95%;		/* Position of topic icon */
+}
+
+
+/* Profile & navigation icons */
+.thanks-icon:before
+{
+  content: url(https://hornygirls.fun/images/button/hbut.png);
+  position: relative;
+}
+
+.removethanks-icon:before
+{
+  content: url(https://hornygirls.fun/images/button/cbut.png);
+  position: relative;
+}
+
+.thanks_reput_image_back
+{
+	background:  url(../../../images/rating/2.png);
+	background-repeat: repeat-x;
+}
+.thanks_reput_image
+{
+	background:  url(../../../images/rating/2.png);
+	background-repeat: repeat-x;
+}

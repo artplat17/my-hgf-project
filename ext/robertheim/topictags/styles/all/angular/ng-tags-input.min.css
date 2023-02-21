@@ -1,0 +1,164 @@
+tags-input {
+    display:block
+    
+}
+
+tags-input *,tags-input :after,tags-input :before {
+    -moz-box-sizing:border-box;
+    -webkit-box-sizing:border-box;
+    box-sizing:border-box
+    
+}
+    
+tags-input .host {
+    position:relative;
+    margin-top:5px;
+    margin-bottom:5px;
+    height:100%
+    
+}
+    
+tags-input .host:active {
+    outline:0
+    
+}
+
+tags-input .tags {
+    -moz-appearance: textfield;
+    -webkit-appearance: textfield;
+    padding: 1px;
+    overflow: hidden;
+    word-wrap: break-word;
+    cursor: text;
+    height: 100%;
+    border-radius: 10px;
+    padding: 5px;
+    border-color: rgba(255,255,255,0.04);
+    background: rgb(23 27 36);
+    border: 1px solid transparent;
+}
+
+tags-input .tags.focused {
+    outline:0;
+    border: 1px solid #5fc3e4;
+    
+}
+
+tags-input .tags .tag-list {
+    margin:0;
+    padding:0;
+    list-style-type:none
+    
+}
+
+tags-input .tags .tag-item {
+    margin: 2px;
+    padding: 0 5px;
+    display: inline-block;
+    float: left;
+    font-family: inherit;
+    font-size: inherit;
+    line-height: inherit;
+}
+
+tags-input .tags .tag-item.selected {
+    background:-webkit-linear-gradient(top,#febbbb 0,#fe9090 45%,#ff5c5c 100%);
+    background:linear-gradient(to bottom,#febbbb 0,#fe9090 45%,#ff5c5c 100%)
+    
+}
+
+tags-input .tags .tag-item .remove-button {
+    padding:0;
+    border:none;
+    background:0 0;
+    cursor:pointer;
+    font:700 16px Arial,sans-serif;
+    color:#9e92b6;
+    
+}
+
+tags-input .tags .tag-item .remove-button:active, tags-input .tags .tag-item span:active {
+    color: #ffffff;
+    text-decoration: none;
+}
+
+tags-input .tags .tag-item .remove-button:hover, tags-input .tags .tag-item span:hover {
+    color: #ffffffdb;
+    text-decoration: none;
+}
+
+tags-input .tags .input {
+    background-color: transparent;
+    border: 0;
+    outline: 0;
+    margin: 7.5px 2px;
+    padding: 0;
+    padding-left: 5px;
+    float: left;
+    font-family: inherit;
+    font-size: inherit;
+    line-height: inherit;
+    font-weight: 500;
+}
+
+tags-input .tags .input.invalid-tag {
+    color:red
+    
+}
+
+tags-input .tags .input::-ms-clear {
+    display:none
+    
+}
+
+tags-input.ng-invalid .tags {
+    outline:0;
+    border: 1px solid #e41c5a;
+}
+
+tags-input .autocomplete {
+    margin-top: 5px;
+    position: absolute;
+    padding: 5px 0;
+    z-index: 999;
+    width: 100%;
+    background-color: #3a404a;
+    border: 2px double rgb(95 195 228);
+    border-radius: 25px;
+}
+
+tags-input .autocomplete .suggestion-list {
+    margin:0;
+    padding:0;
+    list-style-type:none
+    
+}
+
+tags-input .autocomplete .suggestion-item {
+    padding:5px 10px;
+    cursor:pointer;
+    white-space:nowrap;
+    overflow:hidden;
+    text-overflow:ellipsis;
+    font:14px "Helvetica Neue",Helvetica,Arial,sans-serif;
+    color:#000;
+    background-color:#bd000000;
+    
+}
+
+tags-input .autocomplete .suggestion-item.selected,tags-input .autocomplete .suggestion-item.selected em {
+    color:#fff;
+    background-color:#bd000000;
+    
+}
+
+tags-input .autocomplete .suggestion-item em {
+    font:normal bold 14px "Helvetica Neue",Helvetica,Arial,sans-serif;
+    color:#000;
+    background-color:#fff
+    
+}
+
+tags-input .tags .tag-item span {
+    color: #5fc2e3;
+}

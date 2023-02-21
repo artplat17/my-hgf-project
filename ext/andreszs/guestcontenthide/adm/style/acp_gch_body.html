@@ -1,0 +1,97 @@
+<!-- INCLUDE overall_header.html -->
+
+<h1>{L_ACP_GCH_TITLE}</h1>
+<p>{L_ACP_GCH_DETAILS}</p>
+
+<form id="acp_board" method="post" action="{U_ACTION}">
+
+	<fieldset>
+		<legend>{L_ACP_GCH_GUESTS}</legend>
+		<dl>
+			<dt><label>{L_ACP_GCH_POST_IMG}{L_COLON}</label></dt>
+			<dd><select name="gch_g_hide_img">
+				<option value="0" <!-- IF GCH_G_HIDE_IMG == 0 -->selected="selected"<!-- ENDIF -->/> {L_ACP_GCH_VISIBLE}</option>
+				<option value="1" <!-- IF GCH_G_HIDE_IMG == 1 -->selected="selected"<!-- ENDIF -->/> {L_ACP_GCH_HIDE_IMG}</option>
+				<option value="2" <!-- IF GCH_G_HIDE_IMG == 2 -->selected="selected"<!-- ENDIF -->/> {L_ACP_GCH_HIDE_POST}</option>
+			</select></dd>
+		</dl>
+		<dl>
+			<dt><label>{L_ACP_GCH_POST_URL}{L_COLON}</label></dt>
+			<dd><select name="gch_g_hide_url">
+				<option value="0" <!-- IF GCH_G_HIDE_URL == 0 -->selected="selected"<!-- ENDIF -->/> {L_ACP_GCH_VISIBLE}</option>
+				<option value="1" <!-- IF GCH_G_HIDE_URL == 1 -->selected="selected"<!-- ENDIF -->/> {L_ACP_GCH_HIDE_URL}</option>
+				<option value="2" <!-- IF GCH_G_HIDE_URL == 2 -->selected="selected"<!-- ENDIF -->/> {L_ACP_GCH_HIDE_POST}</option>
+			</select></dd>
+		</dl>
+		<dl>
+			<dt><label>{L_ACP_GCH_ATTACHMENTS}{L_COLON}</label></dt>
+			<dd><select name="gch_g_hide_att">
+				<option value="0" <!-- IF GCH_G_HIDE_ATT == 0 -->selected="selected"<!-- ENDIF -->/> {L_ACP_GCH_VISIBLE}</option>
+				<option value="1" <!-- IF GCH_G_HIDE_ATT == 1 -->selected="selected"<!-- ENDIF -->/> {L_ACP_GCH_HIDDEN}</option>
+			</select></dd>
+		</dl>
+		<dl>
+			<dt><label>{L_ACP_GCH_SIGNATURES}{L_COLON}</label></dt>
+			<dd><select name="gch_g_hide_sig">
+				<option value="0" <!-- IF GCH_G_HIDE_SIG == 0 -->selected="selected"<!-- ENDIF -->/> {L_ACP_GCH_VISIBLE}</option>
+				<option value="1" <!-- IF GCH_G_HIDE_SIG == 1 -->selected="selected"<!-- ENDIF -->/> {L_ACP_GCH_HIDDEN}</option>
+			</select></dd>
+		</dl>
+	</fieldset>
+
+	<fieldset>
+		<legend>{L_ACP_GCH_BOTS}</legend>
+		<dl>
+			<dt><label>{L_ACP_GCH_POST_IMG}{L_COLON}</label></dt>
+			<dd><select name="gch_b_hide_img">
+				<option value="0" <!-- IF GCH_B_HIDE_IMG == 0 -->selected="selected"<!-- ENDIF -->/> {L_ACP_GCH_VISIBLE}</option>
+				<option value="1" <!-- IF GCH_B_HIDE_IMG == 1 -->selected="selected"<!-- ENDIF -->/> {L_ACP_GCH_HIDE_IMG}</option>
+				<option value="2" <!-- IF GCH_B_HIDE_IMG == 2 -->selected="selected"<!-- ENDIF -->/> {L_ACP_GCH_HIDE_POST}</option>
+			</select></dd>
+		</dl>
+		<dl>
+			<dt><label>{L_ACP_GCH_POST_URL}{L_COLON}</label></dt>
+			<dd><select name="gch_b_hide_url">
+				<option value="0" <!-- IF GCH_B_HIDE_URL == 0 -->selected="selected"<!-- ENDIF -->/> {L_ACP_GCH_VISIBLE}</option>
+				<option value="1" <!-- IF GCH_B_HIDE_URL == 1 -->selected="selected"<!-- ENDIF -->/> {L_ACP_GCH_HIDE_URL}</option>
+				<option value="2" <!-- IF GCH_B_HIDE_URL == 2 -->selected="selected"<!-- ENDIF -->/> {L_ACP_GCH_HIDE_POST}</option>
+			</select></dd>
+		</dl>
+		<dl>
+			<dt><label>{L_ACP_GCH_ATTACHMENTS}{L_COLON}</label></dt>
+			<dd><select name="gch_b_hide_att">
+				<option value="0" <!-- IF GCH_B_HIDE_ATT == 0 -->selected="selected"<!-- ENDIF -->/> {L_ACP_GCH_VISIBLE}</option>
+				<option value="1" <!-- IF GCH_B_HIDE_ATT == 1 -->selected="selected"<!-- ENDIF -->/> {L_ACP_GCH_HIDDEN}</option>
+			</select></dd>
+		</dl>
+		<dl>
+			<dt><label>{L_ACP_GCH_SIGNATURES}{L_COLON}</label></dt>
+			<dd><select name="gch_b_hide_sig">
+				<option value="0" <!-- IF GCH_B_HIDE_SIG == 0 -->selected="selected"<!-- ENDIF -->/> {L_ACP_GCH_VISIBLE}</option>
+				<option value="1" <!-- IF GCH_B_HIDE_SIG == 1 -->selected="selected"<!-- ENDIF -->/> {L_ACP_GCH_HIDDEN}</option>
+			</select></dd>
+		</dl>
+	</fieldset>
+
+	<fieldset>
+		<legend>{L_ACP_GCH_REFERENCE}</legend>
+		<p>{L_ACP_GCH_INFO_IMG}{L_COLON}<br />&bull; {L_GCH_HIDDEN_URL}</p>
+		<p>{L_ACP_GCH_INFO_URL}{L_COLON}<br />&bull; {L_GCH_HIDDEN_IMG}</p>
+		<p>{L_ACP_GCH_INFO_POST}{L_COLON}<br />&bull; {L_GCH_HIDDEN_POST}</p>
+	</fieldset>
+
+	<fieldset>
+		<legend>{L_ACP_GCH_ABOUT}</legend>
+		<p>{L_ACP_GCH_DISCUSS}{L_COLON}<br />&bull; <a href="https://www.phpbb.com/customise/db/extensions-36" target="_blank"><strong>GCH extension on phpBB</strong></a></p>
+		<p>{L_ACP_GCH_GITHUB}{L_COLON}<br />&bull; <a href="https://github.com/andreszs/guestcontenthide" target="_blank"><strong>GCH extension on GitHub</strong></a></p>
+	</fieldset>
+
+	<fieldset class="submit-buttons">
+		<input class="button1" type="submit" id="submit" name="submit" value="{L_SUBMIT}" />&nbsp;
+		<input class="button2" type="submit" name="preview" value="{L_PREVIEW}" />
+		{S_FORM_TOKEN}
+	</fieldset>
+
+</form>
+
+<!-- INCLUDE overall_footer.html -->

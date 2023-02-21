@@ -1,0 +1,14 @@
+<!-- IF PERMISSION_VIEW -->
+<div class="whotop">
+<hr>
+<h3>{WHOVISITEDTHISTOPIC_TITLE}</h3>
+<p>
+<!-- BEGIN whovisitedthistopic -->
+<span class="wvtt-member">
+	<!-- IF PERMISSION_SHOW_AVATAR --><span class="whovisitedthistopic-avatar">{whovisitedthistopic.AVATAR}</span><!-- ENDIF --> <span><a href="{whovisitedthistopic.URL}" "{whovisitedthistopic.DATE}" "{whovisitedthistopic.USERNAME_COLOUR}">{whovisitedthistopic.USERNAME}</a></span><!-- IF PERMISSION_COUNT --> ({whovisitedthistopic.VISITS})<!-- ENDIF --><!-- IF not whovisitedthistopic.S_LAST_ROW -->,&ensp;<!-- ENDIF -->
+</span>
+<!-- END whovisitedthistopic -->
+</p>
+<!-- ENDIF -->
+<hr>
+</div>

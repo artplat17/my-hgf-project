@@ -1,0 +1,278 @@
+@media (max-width: 766.5px) {
+	
+	body{ border-top-color: #FF0000;}
+	
+	/* Sidebar Adjustments
+	----------------------------*/
+	
+	/* Hide left sidebar on tiny screens. Adjust the CSS to stop it borking the other columns */
+	#leftcolumn {
+		display: none;
+		float: none;
+		width: 100%;
+		clear: both;
+		margin-left: 0;
+	}
+	
+	/* Center column padding/margin adjustments */
+	#contentcolumn {
+		margin: 0 !important;
+		padding: 0;
+	}
+	
+	/* Break right column onto new line cleanly */
+	#rightcolumn {
+		float: none;
+		width: 100%;
+		margin-left: 0;
+		clear: both;
+	}
+	
+	/* Sidebar Widgets
+	---------------------------------------- */
+	.sidebar_widget {
+		table-layout: fixed;
+		width: 100%;
+	}
+	
+	.profile_widget_avatar, .profile_widget_info, .profile_widget_list {
+		display: block;
+		vertical-align: top;
+		float: none;
+		width: 100%;
+		margin: 0;
+		padding: 0;
+		text-align: center;
+	}
+	
+	.profile_widget_avatar {
+		margin-bottom: 30px;
+	}
+
+	.profile_widget_info li {
+		line-height: 2.2em;
+	}
+	
+	.profile_widget_list {
+		padding-top: 0;
+		border-top: none;
+	}
+	
+	/* Grid Forumlist
+	---------------------------------------- */
+	
+	/* Turn 3 columns into 1 */
+	.forumlist_grid li.row,
+	.forumlist_grid_icons li.row {
+		width: 100%;	
+	}	
+	
+	
+	/* Custom Login Page
+	---------------------------------------- */
+	
+	/* Last Post Avatar
+	---------------------------------------- */	
+	span.lastpostavatar {
+		display: none;	
+	}
+	
+	/* Subforums in column
+	---------------------------------------- */	
+	ul.sub-list {
+		width: 100%;
+	}	
+	
+	/* responsive logo
+	---------------------------------------- */	
+	
+	/* override the dynamic inline width so that we can relatively resize logo below */
+	#site-description {
+		width: 100% !important;
+	}
+	
+	#site-description img {
+		max-width: 100%;
+	}
+
+	img.custom_logo {
+		max-height: 100px !important;
+		height: 90px;
+        width: 90px;
+	}
+	
+	/* pagination fix
+	---------------------------------------- */
+    /*.row .pagination {*/
+        /*display: block;*/
+        /*margin-top: 0;*/
+    /*}   */
+	
+	/* Fix overlapping forum images */
+	.list-inner img {
+		max-width: 100%;	
+	}	
+	
+}
+
+@media (max-width: 766.5px) {
+    
+    ul.topiclist.topics {
+        padding: 4px;
+    }
+    
+    ul.topiclist.topics .row {
+        padding: 7.5px 6px;
+    }
+    
+}
+
+
+@media (min-width: 0px) and (max-width: 538.5px) {
+    
+    ul.topiclist dt .list-inner {
+        padding-right: 0px;
+        padding-left: 0px;
+    }
+    
+    dt.topicicon {
+        background-position: right bottom !important;
+        background-size: 24px !important;
+    }
+    
+    .forums .row-item:before, .topics .row-item:before, .pmlist .row-item:before, .cplist .row-item:before {
+        right: 11px;
+        bottom: 7px;
+        width: 24px;
+        height: 24px;
+        line-height: 24px;
+        left: auto;
+        top: auto;
+    }
+    
+    /*.row .pagination {*/
+    /*    margin-bottom: 0px !important;*/
+    /*}*/
+    
+    .global_read_mine:after, .global_read_locked_mine:after, .global_unread_mine:after, .global_unread_locked_mine:after, .announce_read_mine:after, .announce_read_locked_mine:after, .announce_unread_mine:after, .announce_unread_locked_mine:after, .sticky_read_mine:after, .sticky_read_locked_mine:after, .sticky_unread_mine:after, .sticky_unread_locked_mine:after, .topic_read_mine:after, .topic_read_hot_mine:after, .topic_unread_mine:after, .topic_unread_hot_mine:after, .topic_read_locked_mine:after, .topic_unread_locked_mine:after {
+        bottom: 6px;
+        right: 27px;
+        top: auto;
+        left: auto;
+    }
+}
+
+@media (min-width: 449.5px) and (max-width: 494.5px) {
+    
+}
+
+
+
+
+
+@media (max-width: 494.5px) {
+    
+    
+}
+
+@media (max-width: 290.5px) {
+    
+    a.topictitle.topictitlemin {
+        font-size: 1.192em;
+    }
+}
+
+/*Настройка ViewForum*/
+    
+@media (max-width: 449.5px) {
+    
+    /*Скрыть автора поста*/
+    .topic-poster.responsive-show.left-box {
+        display: none;
+    }
+    
+    /*Сдвиг количества сообщений у которого постоянный М-Т: 6пх (вытягивает строку для хорошего отступа пагинации от тайтла)*/
+    span.responsive-show.left-box {
+        position: relative;
+        float: left;
+        top: -1.5px;
+    }
+    
+    .row .pagination {
+        float: right;
+        margin-right: 42px;
+        margin-top: 4.5px;
+    }
+}
+
+    /*Независимо от размера шрифта до 538пх*/
+
+@media (min-width: 449.5px) and (max-width: 538.5px) {
+    
+    span.responsive-show.left-box {
+        float: right;
+        margin-right: 42px;
+    }
+}
+
+    /*Независимо от размера шрифта до 766пх*/
+
+@media (min-width: 449.5px) and (max-width: 766.5px) {
+    
+    .row .pagination {
+        position: absolute;
+        text-align: center;
+    }
+
+}
+
+    /*До увеличения шрифта*/
+
+@media (min-width: 449.5px) and (max-width: 494.5px) {
+    
+    .row .pagination {
+        width: 120%;
+        bottom: 4.5px;
+    }
+    
+    span.responsive-show.left-box {
+        position: relative;
+        top: -3px;
+    }
+}
+
+    /*После увеличения шрифта*/
+    
+    /*Общие до 766пх*/
+
+@media (min-width: 494.5px) and (max-width: 766.5px) {
+    
+    span.responsive-show.left-box {
+        top: -4.5px;
+        position: relative;
+    }
+    
+    .row .pagination {
+        bottom: 4.5px;
+    }
+
+}    
+
+@media (min-width: 494.5px) and (max-width: 538.5px) {
+    
+    .row .pagination {
+        width: 120%;
+    }
+}
+
+@media (min-width: 538.5px) and (max-width: 766.5px) {
+    
+    .row .pagination {
+        width: 114%;
+    }
+    
+    ul.topiclist dt .list-inner {
+        padding-right: 6px;
+    }
+}
+

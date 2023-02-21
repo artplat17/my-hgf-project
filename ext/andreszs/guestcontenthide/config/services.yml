@@ -1,0 +1,9 @@
+services:
+    andreszs.guestcontenthide.listener:
+        class: andreszs\guestcontenthide\event\main_listener
+        arguments:
+            - '@config'
+            - '@user'
+            - '@language'
+        tags:
+            - { name: event.listener }

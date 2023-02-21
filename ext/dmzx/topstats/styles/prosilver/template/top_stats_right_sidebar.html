@@ -1,0 +1,156 @@
+{% if S_TSMAU_ENABLE %}
+	<div class="container">
+	<div class="block-left-off">
+		{% if TOPSTATS2_IS_COLLAPSIBLE %}
+		<a class="category{% if S_TOPSTATS2_HIDDEN %} hidden-category{% endif %}" style="display: none; height: 0"></a>
+		{% endif %}
+		<div class="forabg">
+			<div class="inner">
+				<ul class="topiclist">
+					<li class="header">
+						<dl>
+							<dt>{{ TSMAU_NUMBER }} {{ lang('MOST_ACTIVE_USERS') }}</dt>
+							 <dd>
+								<span class="stats_info_posts responsive-hide">{{ lang('POSTS') }}</span>
+							</dd>
+						</dl>
+						{% if TOPSTATS2_IS_COLLAPSIBLE %}
+						<a href="{{ U_TOPSTATS2_COLLAPSE_URL }}"
+							class="collapse-btn topstats-collapse"
+							data-hidden="{{ S_TOPSTATS2_HIDDEN }}"
+							data-ajax="phpbb_collapse"
+							data-overlay="true"
+							data-title-alt="{{ lang('TOPSTATS_COLLAPSE_TITLE', ((not S_TOPSTATS2_HIDDEN) * 1)) }}"
+							title="{{ lang('TOPSTATS_COLLAPSE_TITLE', (S_TOPSTATS2_HIDDEN * 1)) }}">
+							<i class="fa {% if S_TOPSTATS2_HIDDEN %}fa-plus-square{% else %}fa-minus-square{% endif %}"></i>
+						</a>
+						{% endif %}
+					</li>
+				</ul>
+				<ul class="topiclist forums{% if TOPSTATS2_IS_COLLAPSIBLE %} collapsible{% endif %}">
+				{% for most_active_users in loops.most_active_users %}
+					<li class="row">
+						<dl>
+							<dt>
+								<span class="stats_name">
+									<a style="color: #{{ most_active_users.USER_COLOUR }};" href="{{ most_active_users.USER_ID }}" title="{{ lang('JOINED_US') }} {{ most_active_users.USER_REG }}">{{ most_active_users.USERNAME }}</a>
+								</span>
+							</dt>
+							<dd style="border: none">
+								<span class="stats_post_infos_mau">
+									<a href="{{ most_active_users.USER_POST_SEARCH }}">{{ most_active_users.USER_POSTS }}</a>
+								</span>
+							</dd>
+						</dl>
+					</li>
+				{% endfor %}
+				</ul>
+			</div>
+		</div>
+	</div>
+	</div>
+{% endif %}
+
+{% if S_TSMAF_ENABLE %}
+    <div class="container">
+	<div class="block-right-off">
+		{% if TOPSTATS3_IS_COLLAPSIBLE %}
+		<a class="category{% if S_TOPSTATS3_HIDDEN %} hidden-category{% endif %}" style="display: none; height: 0"></a>
+		{% endif %}
+		<div class="forabg">
+			<div class="inner">
+				<ul class="topiclist">
+					<li class="header">
+						<dl>
+							<dt>{{ TSMAF_NUMBER }} {{ lang('MOST_ACTIVE_FORUMS') }}</dt>
+							<dd>
+								<span class="stats_info_topics responsive-hide">{{ lang('TOPICS') }}</span>
+							</dd>
+						</dl>
+						{% if TOPSTATS3_IS_COLLAPSIBLE %}
+						<a href="{{ U_TOPSTATS3_COLLAPSE_URL }}"
+							class="collapse-btn topstats-collapse"
+							data-hidden="{{ S_TOPSTATS3_HIDDEN }}"
+							data-ajax="phpbb_collapse"
+							data-overlay="true"
+							data-title-alt="{{ lang('TOPSTATS_COLLAPSE_TITLE', ((not S_TOPSTATS3_HIDDEN) * 1)) }}"
+							title="{{ lang('TOPSTATS_COLLAPSE_TITLE', (S_TOPSTATS3_HIDDEN * 1)) }}">
+							<i class="fa {% if S_TOPSTATS3_HIDDEN %}fa-plus-square{% else %}fa-minus-square{% endif %}"></i>
+						</a>
+						{% endif %}
+					</li>
+				</ul>
+				<ul class="topiclist forums{% if TOPSTATS3_IS_COLLAPSIBLE %} collapsible{% endif %}">
+				{% for most_active_forums in loops.most_active_forums %}
+					<li class="row">
+						<dl>
+							<dt>
+								<span class="stats_name">
+									<a href="{{ most_active_forums.FORUM_URL }}">{{ most_active_forums.FORUM_NAME }}</a>
+								</span>
+							</dt>
+							<dd style="border: none">
+								<span class="stats_post_infos_maf">{{ most_active_forums.FORUM_POSTS }}</span>
+							</dd>
+						</dl>
+					</li>
+				{% endfor %}
+				</ul>
+			</div>
+		</div>
+	</div>
+	</div>
+{% endif %}
+
+{% if S_TSLVB_ENABLE or S_TSLRU_ENABLE %}
+<div class="container">
+    {% if S_TSLRU_ENABLE %}
+	<div class="block-right{% if not S_TSLVB_ENABLE %}-off{% endif %} rsp">
+		{% if TOPSTATS5_IS_COLLAPSIBLE %}
+		<a class="category{% if S_TOPSTATS5_HIDDEN %} hidden-category{% endif %}" style="display: none; height: 0"></a>
+		{% endif %}
+		<div class="forabg">
+			<div class="inner">
+				<ul class="topiclist">
+					<li class="header">
+						<dl>
+							<dt>{{ TSLRU_NUMBER }} {{ lang('LAST_REGISTERED_USERS') }}</dt>
+							<dd>
+								<span class="stats_info responsive-hide">{{ lang('TIME') }}</span>
+							</dd>
+						</dl>
+						{% if TOPSTATS5_IS_COLLAPSIBLE %}
+						<a href="{{ U_TOPSTATS5_COLLAPSE_URL }}"
+							class="collapse-btn topstats-collapse"
+							data-hidden="{{ S_TOPSTATS5_HIDDEN }}"
+							data-ajax="phpbb_collapse"
+							data-overlay="true"
+							data-title-alt="{{ lang('TOPSTATS_COLLAPSE_TITLE', ((not S_TOPSTATS5_HIDDEN) * 1)) }}"
+							title="{{ lang('TOPSTATS_COLLAPSE_TITLE', (S_TOPSTATS5_HIDDEN * 1)) }}">
+							<i class="fa {% if S_TOPSTATS5_HIDDEN %}fa-plus-square{% else %}fa-minus-square{% endif %}"></i>
+						</a>
+						{% endif %}
+					</li>
+				</ul>
+				<ul class="topiclist forums{% if TOPSTATS5_IS_COLLAPSIBLE %} collapsible{% endif %}">
+				{% for last_registered_user in loops.last_registered_user %}
+					<li class="row">
+						<dl>
+							<dt>
+								<span class="stats_name">
+									<a style="font-weight:bold; color:#{{ last_registered_user.USER_COLOUR }};" href="{{ last_registered_user.USER_URL }}">{{ last_registered_user.USERNAME }}</a>
+								</span>
+							</dt>
+							<dd style="border: none">
+								<span class="stats_date{% if not S_TSLVB_ENABLE %}-off{% endif %}">{{ last_registered_user.USER_REGISTERED }}</span>
+							</dd>
+						</dl>
+					</li>
+				{% endfor %}
+				</ul>
+			</div>
+		</div>
+	</div>
+	{% endif %}
+</div>
+{% endif %}

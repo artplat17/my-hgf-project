@@ -1,0 +1,53 @@
+{% if S_TSMVT_ENABLE %}
+    <div class="container">
+	<div class="block-left-off">
+		{% if TOPSTATS_IS_COLLAPSIBLE %}
+		<a class="category{% if S_TOPSTATS_HIDDEN %} hidden-category{% endif %}" style="display: none; height: 0"></a>
+		{% endif %}
+		<div class="forabg">
+			<div class="inner">
+				<ul class="topiclist">
+					<li class="header">
+						<dl>
+							<dt>{{ TSMVT_NUMBER }} {{ lang('MOST_VIEWED') }}</dt>
+							<dd>
+								<span class="stats_info responsive-hide">{{ lang('VIEWS') }}</span>
+							</dd>
+						</dl>
+						{% if TOPSTATS_IS_COLLAPSIBLE %}
+						<a href="{{ U_TOPSTATS_COLLAPSE_URL }}"
+							class="collapse-btn topstats-collapse"
+							data-hidden="{{ S_TOPSTATS_HIDDEN }}"
+							data-ajax="phpbb_collapse"
+							data-overlay="true"
+							data-title-alt="{{ lang('TOPSTATS_COLLAPSE_TITLE', ((not S_TOPSTATS_HIDDEN) * 1)) }}"
+							title="{{ lang('TOPSTATS_COLLAPSE_TITLE', (S_TOPSTATS_HIDDEN * 1)) }}">
+							<i class="fa {% if S_TOPSTATS_HIDDEN %}fa-plus-square{% else %}fa-minus-square{% endif %}"></i>
+						</a>
+						{% endif %}
+					</li>
+				</ul>
+				<ul class="topiclist forums{% if TOPSTATS_IS_COLLAPSIBLE %} collapsible{% endif %}">
+				{% for most_viewed in loops.most_viewed %}
+					<li class="row">
+						<dl>
+							<dt class="stats_title">
+								<a class="stats_topic_title" href="{{ most_viewed.U_FIRST_TOPIC }}">{{ most_viewed.TOPIC_TITLE }}</a><br />
+								<span class="stats_author responsive-hide">
+									{{ lang('POST_BY_AUTHOR') }} <a style="font-weight:bold; color: #{{ most_viewed.TOPIC_FIRST_POSTER_COLOUR }};" href="{{ most_viewed.USERNAME_FIRST }}">{{ most_viewed.TOPIC_FIRST_POSTER_NAME }}</a>
+									{{ lang('POSTED_ON_DATE') }} {{ most_viewed.TOPIC_TIME }}
+								</span>
+							</dt>
+							<dd style="border: none">
+								<span class="stats_infos-off_head">{{ most_viewed.TOPIC_VIEWS }}</span>
+							</dd>
+						</dl>
+					</li>
+				{% endfor %}
+				</ul>
+			</div>
+		</div>
+	</div>
+	</div>
+{% endif %}
+	

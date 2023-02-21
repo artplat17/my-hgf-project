@@ -1,0 +1,27 @@
+{
+    "name": "andreszs/guestcontenthide",
+    "type": "phpbb-extension",
+    "description": "Hide post images, links, attachments and signatures from guests or bots.",
+    "homepage": "https://github.com/andreszs/guestcontenthide",
+    "version": "1.0.3",
+    "time": "2017-11-07",
+    "license": "GPL-2.0",
+    "authors": [
+        {
+            "name": "Andres Zsogon",
+            "email": "admin@spamthis.com",
+            "homepage": "https://www.andreszsogon.com",
+            "role": "Developer"
+        }
+    ],
+    "require": {
+        "php": ">=5.3.3",
+        "composer/installers": "~1.0"
+    },
+    "extra": {
+        "display-name": "Guest Content Hide",
+        "soft-require": {
+            "phpbb/phpbb": ">=3.1.4,<3.3.0@dev"
+        }
+    }
+}

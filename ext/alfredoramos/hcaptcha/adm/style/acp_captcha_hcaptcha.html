@@ -1,0 +1,97 @@
+{% include 'overall_header.html' %}
+
+<a id="maincontent"></a>
+
+<h1>{{ lang('ACP_VC_SETTINGS') }}</h1>
+<p>{{ lang('ACP_VC_SETTINGS_EXPLAIN') }}</p>
+<p>{{ lang('CAPTCHA_HCAPTCHA_EXPLAIN') }}</p>
+
+{% if VALIDATION_ERRORS %}
+<div class="errorbox">
+	{% for ERROR in VALIDATION_ERRORS %}
+	<p>{{ ERROR.MESSAGE }}</p>
+	{% endfor %}
+</div>
+{% endif %}
+
+<form id="acp-hcaptcha" method="post" action="{{ U_ACTION }}">
+	<fieldset>
+		<legend>{{ lang('GENERAL_OPTIONS') }}</legend>
+		<dl>
+			<dt>
+				<label for="hcaptcha-key">{{ lang('HCAPTCHA_KEY') ~ lang('COLON') }}</label>
+				<br><span>{{ lang('HCAPTCHA_KEY_EXPLAIN') }}</span>
+			</dt>
+			<dd>
+				<input type="text" id="hcaptcha-key" name="hcaptcha_key" value="{{ HCAPTCHA_KEY }}" required="required" autocomplete="off" class="medium">
+			</dd>
+		</dl>
+		<dl>
+			<dt>
+				<label for="hcaptcha-secret">{{ lang('HCAPTCHA_SECRET') ~ lang('COLON') }}</label>
+				<br><span>{{ lang('HCAPTCHA_SECRET_EXPLAIN') }}</span>
+			</dt>
+			<dd>
+				<input type="password" id="hcaptcha-secret" name="hcaptcha_secret" value="{{ HCAPTCHA_SECRET }}" required="required" autocomplete="off" class="medium">
+				<span id="toggle-hcaptcha-secret" title="{{ lang('ACP_HCAPTCHA_TOGGLE_SECRET', lang('HCAPTCHA_SECRET'))|striptags|escape('html_attr') }}">
+					<i class="icon acp-icon acp-icon-resync fa-eye fa-fw" aria-hidden="true"></i>
+				</span>
+			</dd>
+		</dl>
+		{% if HCAPTCHA_THEME_LIST %}
+		<dl>
+			<dt>
+				<label for="hcaptcha-theme">{{ lang('HCAPTCHA_THEME') ~ lang('COLON') }}</label>
+				<br><span>{{ lang('HCAPTCHA_THEME_EXPLAIN') }}</span>
+			</dt>
+			<dd>
+				<select id="hcaptcha-theme" name="hcaptcha_theme">
+					{% for THEME in HCAPTCHA_THEME_LIST %}
+					<option value="{{ THEME.KEY }}"{% if THEME.ENABLED %} selected{% endif %}>{{ THEME.NAME }}</option>
+					{% endfor %}
+				</select>
+			</dd>
+		</dl>
+		{% endif %}
+		{% if HCAPTCHA_SIZE_LIST %}
+		<dl>
+			<dt>
+				<label for="hcaptcha-size">{{ lang('HCAPTCHA_SIZE') ~ lang('COLON') }}</label>
+				<br><span>{{ lang('HCAPTCHA_SIZE_EXPLAIN') }}</span>
+			</dt>
+			<dd>
+				<select id="hcaptcha-size" name="hcaptcha_size">
+					{% for SIZE in HCAPTCHA_SIZE_LIST %}
+					<option value="{{ SIZE.KEY }}"{% if SIZE.ENABLED %} selected{% endif %}>{{ SIZE.NAME }}</option>
+					{% endfor %}
+				</select>
+			</dd>
+		</dl>
+		{% endif %}
+	</fieldset>
+
+	<fieldset>
+		<legend>{{ lang('PREVIEW') }}</legend>
+		{% if PREVIEW %}
+			<div class="successbox">
+				<h3>{{ lang('WARNING') }}</h3>
+				<p>{{ lang('CAPTCHA_PREVIEW_MSG') }}</p>
+			</div>
+		{% endif %}
+
+		{% include CAPTCHA_PREVIEW %}
+	</fieldset>
+
+	<fieldset>
+		<legend>{{ lang('ACP_SUBMIT_CHANGES') }}</legend>
+		<p class="submit-buttons">
+			<input class="button1" id="submit" name="submit" type="submit" value="{{ lang('SUBMIT') }}">
+			<input class="button2" id="reset" name="reset" type="reset" value="{{ lang('RESET') }}">
+			<input name="select_captcha" type="hidden" value="{{ CAPTCHA_NAME }}">
+			<input name="configure" type="hidden" value="1">
+			{{ S_FORM_TOKEN }}
+		</p>
+	</fieldset>
+</form>
+
+{% include 'overall_footer.html' %}

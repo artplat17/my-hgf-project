@@ -1,0 +1,13 @@
+<div class="welcome"> Welcome to our Horny Forum! </div>
+
+{% if S_USER_LOGGED_IN %}
+
+{% if S_TSRAT_ENABLE %}
+{% INCLUDE 'recent_active_body.html' %}
+{% endif %}
+
+{% if S_TSMVT_ENABLE %}
+{% INCLUDE 'top_stats_head.html' %}
+{% endif %}
+
+{% endif %}

@@ -1,0 +1,33 @@
+{
+    "name": "Sumanai/DisplayContactIcon",
+    "type": "phpbb-extension",
+    "description": "It displays the user's contact icons in a mini profile without dropdown",
+    "homepage": "http://sumanai.ru/",
+    "version": "1.0.2",
+    "time": "2016-07-14",
+    "license": "GPL-2.0",
+    "authors": [
+        {
+            "name": "Sumanai",
+            "homepage": "http://sumanai.ru/",
+            "email": "sumanai@ya.ru",
+            "role": "Developer"
+        }],
+    "require": {
+        "php": ">=5.3.3"
+    },
+    "require-dev": {
+      "phpbb/epv": "dev-master"
+    },
+    "extra": {
+        "display-name": "Display contact icon",
+        "soft-require": {
+            "phpbb/phpbb": "3.1.*@dev"
+        },
+        "version-check": {
+            "host": "sumanai.ru",
+            "directory": "/ext/versioncheck",
+            "filename": "displaycontacticon.json"
+        }
+    }
+}

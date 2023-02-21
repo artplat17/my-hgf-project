@@ -1,0 +1,52 @@
+{% if S_TSMRT_ENABLE %}
+    <div class="container">
+	<div class="block-right-off">
+		{% if TOPSTATS1_IS_COLLAPSIBLE %}
+		<a class="category{% if S_TOPSTATS1_HIDDEN %} hidden-category{% endif %}" style="display: none; height: 0"></a>
+		{% endif %}
+		<div class="forabg">
+			<div class="inner">
+				<ul class="topiclist">
+					<li class="header">
+						<dl>
+							<dt>{{ TSMRT_NUMBER }} {{ lang('MOST_REPLIED') }}</dt>
+							<dd>
+								<span class="stats_info responsive-hide">{{ lang('REPLIES') }}</span>
+							</dd>
+						</dl>
+						{% if TOPSTATS1_IS_COLLAPSIBLE %}
+						<a href="{{ U_TOPSTATS1_COLLAPSE_URL }}"
+							class="collapse-btn topstats-collapse"
+							data-hidden="{{ S_TOPSTATS1_HIDDEN }}"
+							data-ajax="phpbb_collapse"
+							data-overlay="true"
+							data-title-alt="{{ lang('TOPSTATS_COLLAPSE_TITLE', ((not S_TOPSTATS1_HIDDEN) * 1)) }}"
+							title="{{ lang('TOPSTATS_COLLAPSE_TITLE', (S_TOPSTATS1_HIDDEN * 1)) }}">
+							<i class="fa {% if S_TOPSTATS1_HIDDEN %}fa-plus-square{% else %}fa-minus-square{% endif %}"></i>
+						</a>
+						{% endif %}
+					</li>
+				</ul>
+				<ul class="topiclist forums{% if TOPSTATS1_IS_COLLAPSIBLE %} collapsible{% endif %}">
+					{% for most_replied in loops.most_replied %}
+					<li class="row">
+						<dl>
+							<dt class="stats_title">
+								<a class="stats_topic_title" href="{{ most_replied.U_FIRST_TOPIC }}">{{ most_replied.TOPIC_TITLE }}</a><br />
+								<span class="stats_author responsive-hide">
+									{{ lang('POST_BY_AUTHOR') }} <a style="font-weight:bold; color: #{{ most_replied.TOPIC_FIRST_POSTER_COLOUR }};" href="{{ most_replied.USERNAME_FIRST }}">{{ most_replied.TOPIC_FIRST_POSTER_NAME }}</a>
+									{{ lang('POSTED_ON_DATE') }} {{ most_replied.TOPIC_TIME }}
+								</span>
+							</dt>
+							<dd style="border: none">
+								<span class="stats_infos-off_foot">{{ most_replied.TOPIC_REPLIES }}</span>
+							</dd>
+						</dl>
+					</li>
+					{% endfor %}
+				</ul>
+			</div>
+		</div>
+	</div>
+	</div>
+{% endif %}

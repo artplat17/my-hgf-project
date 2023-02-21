@@ -1,0 +1,4 @@
+{% if IMGUR_UPLOAD_URL and SHOW_IMGUR_BUTTON %}
+<div class="attachimage"><div class="imgur-button-after"><strong>Attach image to post: </strong>{% include '@alfredoramos_imgur/imgur_posting_button.html' ignore missing %}</div></div>
+{% endif %}
+{% include '@alfredoramos_imgur/imgur_image_input.html' ignore missing %}

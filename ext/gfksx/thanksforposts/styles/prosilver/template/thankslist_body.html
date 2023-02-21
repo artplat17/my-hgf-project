@@ -1,0 +1,87 @@
+{% INCLUDE 'overall_header.html' %}
+<style type="text/css">@media (min-width:500.5px) and (max-width:991.5px) {.search-box.sidebar_widget {table-layout: fixed; margin-top: 5px !important; margin-bottom: 15px !important;}}</style>
+<h2 class="member solo">{{ PAGE_TITLE }}</h2>
+
+{% if loops.pagination|length or TOTAL_USERS > 0 %}
+	<div class="action-bar top">
+		<div class="pagination">
+			{{ TOTAL_USERS }}
+			{% if loops.pagination|length %}
+				{% INCLUDE 'pagination.html' %}
+			{% else %}
+				 &bull; {{ PAGE_NUMBER }}
+			{% endif %}
+		</div>
+	</div>
+{% endif %}
+
+	<div class="forumbg forumbg-table">
+		<div class="inner">
+
+			<table class="table1 thanklist" cellspacing="1">
+				<thead>
+				<tr>
+					<th class="name" data-dfn="{{ lang('USERNAME') }}">{% if S_THANKS %}<a href="{{ U_SORT_USERNAME }}">{{ lang('USERNAME') }}</a>{% endif %}</th>
+					<th class="age">{L_AGE}</th>
+					<th class="posts">{% if S_THANKS %}<a href="{{ U_SORT_THANKS_G }}">{{ lang('GIVEN') }}</a>{% else %}{{ lang('GIVEN') }}{% endif %}</th>
+					<th class="posts">{% if S_THANKS %}<a href="{{ U_SORT_THANKS_R }}">{{ lang('RECEIVED') }}</a>{% else %}{{ lang('RECEIVED') }}{% endif %}</th>
+					<th class="info">Gender<hr class=mlst_info>{L_CONTACTS}</th>
+					{% if U_SORT_ACTIVE %}<th class="active">{% if S_THANKS %}<a href="{{ U_SORT_ACTIVE }}">{{ lang('LAST_ACTIVE') }}</a>{% else %}{{ lang('LAST_ACTIVE') }}{% endif %}</th>{% endif %}
+				</tr>
+				</thead>
+				<tbody>
+		{% for memberrow in loops.memberrow %}
+				<tr class="{% if memberrow.S_ROW_COUNT is even %}bg1{% else %}bg2{% endif %}">
+					<td class="name">	<div class="mas-wrap">
+		{% if MAS_ML_AVATAR %}
+			<div  class="mas-avatar" style="width: {{ MAS_ML_AV_SIZE }}px; height: {{ MAS_ML_AV_SIZE }}px;">
+				{% if memberrow.AVATAR_IMG %}
+					{{ memberrow.AVATAR_IMG }}
+				{% else %}
+					{{ MAS_NO_AVATAR_IMG }}
+				{% endif %}
+			</div>
+		{% endif %}
+		<div class="mas-username">{{ memberrow.USERNAME_FULL }}</div></td>
+					<td class="posts"><strong class="mob-resp">{L_AGE}{L_COLON}&nbsp;</strong><strong>{memberrow.AGE}</strong></td>
+					<td class="posts">{% if memberrow.GIVENS %}<strong class="mob-resp">{{ lang('GIVEN') }}{L_COLON}&nbsp;</strong><strong><a href="{{ memberrow.U_SEARCH_USER_GIVENS }}" title="{{ lang('SEARCH_USER_POSTS') }}">{{ memberrow.GIVENS }}</a></strong>{% else %}<strong>{{ memberrow.GIVENS }}</strong>{% endif %} </td>
+					<td class="posts">{% if memberrow.RECEIVED %}<strong class="mob-resp">{{ lang('RECEIVED') }}{L_COLON}&nbsp;</strong><strong><a href="{{ memberrow.U_SEARCH_USER_RECEIVED }}" title="{{ lang('SEARCH_USER_POSTS') }}">{{ memberrow.RECEIVED }}</a></strong>{% else %}<strong>{{ memberrow.RECEIVED }}</strong>{% endif %}</td>
+					<td class="info"><strong class="mob-resp">Gernder{L_COLON}&nbsp;</strong>
+        			{%- for field in memberrow.custom_fields -%}
+        			    {% if not field.S_PROFILE_CONTACT %}<strong>{{ field.PROFILE_FIELD_VALUE }}</strong><hr class="mlst_info">{% endif %}
+        				{% if field.S_PROFILE_CONTACT %}<a class="{field.PROFILE_FIELD_NAME}" href="{{ field.PROFILE_FIELD_CONTACT }}"></a>{% endif %}
+        			{%- else -%}
+        				&nbsp;
+        			{%- endfor -%}
+        			{%- for field in memberrow.custom_fields -%}
+        			{% if not field.S_PROFILE_CONTACT %}<strong class="NA"><strong class="mob-resp">{L_CONTACT}{L_COLON}&nbsp;</strong>N/A</strong>{% endif %}
+        			{%- endfor -%}
+        			</td>
+					{% if S_VIEWONLINE %}<td class="last-active">{{ memberrow.LAST_ACTIVE }}&nbsp;</td>{% endif %}
+				</tr>
+		{% else %}
+				<tr class="bg1">
+					<td colspan="{% if S_VIEWONLINE %}7{% else %}6{% endif %}">{{ lang('NO_MEMBERS') }}</td>
+				</tr>
+		{% endfor %}
+				</tbody>
+			</table>
+		</div>
+	</div>
+
+{% if loops.pagination|length or TOTAL_USERS > 0 %}
+	<div class="action-bar bottom">
+		<div class="pagination">
+			{{ TOTAL_USERS }}
+			{% if loops.pagination|length %}
+				{% INCLUDE 'pagination.html' %}
+			{% else %}
+				 &bull; {{ PAGE_NUMBER }}
+			{% endif %}
+		</div>
+	</div>
+{% endif %}
+
+{% INCLUDE 'jumpbox.html' %}
+
+{% INCLUDE 'overall_footer.html' %}

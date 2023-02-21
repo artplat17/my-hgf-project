@@ -1,0 +1,29 @@
+.profile-contact > strong, .profile-contact .dropdown-trigger, .profile-contact .pointer {
+	display: none;
+}
+
+.profile-contact .dropdown {
+	display: block !important;
+	margin: 0 !important;
+	padding: 0;
+	position: static;
+}
+
+.profile-contact .dropdown-contents {
+	background: none;
+	border: none;
+	box-shadow: none;
+}
+
+.profile-contact .contact-icons > div {
+	clear: none;
+	float: inherit;
+}
+
+.profile-contact .contact-icons > div > a {
+	margin: 6px 3px 0 0;
+}
+
+.profile-contact .contact-icons > div > a:hover {
+    background-color: #e24677f7;
+}
